@@ -278,9 +278,6 @@ func isLess(i, j reflect.Value) (bool, error) {
 					return sortorder.NaturalLess(itype, jtype), nil
 				}
 				jtypeQuantity, _ := resource.ParseQuantity(jtype)
-				if err != nil {
-					return sortorder.NaturalLess(itype, jtype), nil
-				}
 				// Both strings are quantity
 				return itypeQuantity.Cmp(jtypeQuantity) < 0, nil
 			}
